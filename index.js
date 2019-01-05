@@ -58,7 +58,7 @@ async function getPageData(p) {
       drugtypess: CONSTANT.DRUG_TYPESS,
       name: CONSTANT.NAME,
       p,
-      pageSize:CONSTANT.PAGE_SIZE,
+      pageSize: CONSTANT.PAGE_SIZE,
     },
   });
   return data;
@@ -92,6 +92,24 @@ async function sleep(ms) {
   });
 }
 
+async function getSingleData(url) {
+  const { data } = await instance.get(url);
+  return data;
+}
+
+function getSingleAd(data) {
+  const $ = cheerio.load(data);
+  const $table = $('.body.detail-main table.table');
+  const $spans = $table.find('tr > td > span');
+  const href = $spans.last().find('a').attr('href');
+  return href;
+}
+
+function appendToFile(filename, data) {
+  fs.appendFileSync(filename, data, 'utf8');
+}
+
+
 (async () => {
   for (let i = CONSTANT.START_PAGE; ; i++) {
     const data = await getPageData(i);
@@ -110,20 +128,3 @@ async function sleep(ms) {
     console.log('something went wrong, process exit with code 3');
     process.exit(3);
   });
-
-async function getSingleData(url) {
-  const { data } = await instance.get(url);
-  return data;
-}
-
-function getSingleAd(data) {
-  const $ = cheerio.load(data);
-  const $table = $('.body.detail-main table.table');
-  const $spans = $table.find('tr > td > span');
-  const href = $spans.last().find('a').attr('href');
-  return href;
-}
-
-function appendToFile(filename, data) {
-  fs.appendFileSync(filename, data, 'utf8');
-}
