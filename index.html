@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <title>药品广告数据库-药智数据</title>
+    <meta name="Keywords" content="药品广告,虚假广告,广告">
+    <meta name="Description" content="药品广告数据库收录了CFDA公布的所有药品广告，数据来源于国家药监局(CFDA)；可查询CFDA公布的所有的药品广告。是您了解药品广告的重要工具。">
+    <link rel="stylesheet" href="//static.yaozh.com/css/app.css?_v=1.5.30">
+    <link rel="stylesheet" href="/Public/css/db.css?_v=1.5.30">
+    <script>
+      document.domain = location.host.replace(/(\w|-)+\./, '');
+      var config = {
+        baseUrl: '//static.yaozh.com/js',
+        deps: ['/Public/js/pages/public.js'],
+        version: '1.5.30',
+      };
+      var user = {
+        name: '',
+        isVip: '',
+        isued: '',
+        VipMessage: '',
+        VipEndTime: '',
+      };
+    </script>
+    <script src="//static.yaozh.com/js/app.js?_v=1.5.30"></script>
+    <script src="/Public/js/config.js?_v=1.5.30"></script>
+    <!--[if lt IE 9]>
+    <script src="//static.yaozh.com/js/special/html5shiv.js?_v=1.5.30"></script><![endif]-->
+</head>
+<body class="page-list page-drugad" data-dbname="drugad">
+<div class="ui-topbar">
+    <div class="wrapper clearfix relative">
+        <div class="fl">
+            <a href="#" class="item nav-toggle"><i class="fa"></i></a>
+            <a href="//www.yaozh.com/" class="item cl-blue" target="_blank">药智网</a>
+            <a href="//www.yaozh.com/zhihui" class="item cl-blue" target="_blank">药智汇</a>
+            <a href="//s.yaozh.com" class="item cl-blue" target="_blank">药智通</a>
+            <a href="//patent.yaozh.com" class="item cl-blue" target="_blank">专利通</a>
+            <a href="//report.yaozh.com" class="item cl-blue" target="_blank">药智报告</a>
+            <a href="//news.yaozh.com" class="item cl-blue" target="_blank">新闻</a>
+            <a href="//club.yaozh.com/" class="item cl-blue" target="_blank">俱乐部</a>
+            <a href="//edu.yaozh.com" class="item cl-blue" target="_blank">药智学院</a>
+            <a href="//bbs.yaozh.com" class="item cl-blue" target="_blank">论坛</a>
+            <a href="http://www.35yao.com/" class="item cl-blue" target="_blank">找药网</a>
+            <a href="//nav.yaozh.com/" class="item cl-blue" target="_blank">药智搜</a>
+            <a href="https://yun.yaozh.com/home" class="item cl-blue" target="_blank">云诊所</a>
+            <a href="https://gu.yaozh.com/" class="item cl-blue" target="_blank">药智谷</a>
+
+            <span class="item sub-box">
+            <a class="name" href="/other/custom">客户服务 <i class="fa"></i></a>
+            <div class="subnav">
+              <ul>
+                <li><a href="/other/custom" target="_blank">服务中心</a></li>
+                <li><a href="//help.yaozh.com/list108/" target="_blank">在线帮助</a></li>
+				<li><a href="/other/faq" target="_blank">常见问题</a></li>
+              </ul>
+            </div>
+          </span>
+            <span class="item sub-box app">
+            <a href="/app" target="_blank" title="点击了解更多关于药智数据APP"><span class="app-icon"><i class="fa"></i> <span>药智数据APP</span></span></a>
+            <div class="subnav">
+              <div class="box">
+                <a href="https://itunes.apple.com/cn/app/id1025304074" class="btn btn-sm ios btn-gray" target="_blank">
+                  <i class="fa"></i>
+                  <span>iPhone版下载</span>
+                </a>
+                <a href="//static.yaozh.com/yaozh_latest.apk" class="btn btn-sm android mt10 btn-green" target="_blank">
+                  <i class="fa"></i>
+                  <span>android版下载</span>
+                </a>
+                <div class="tc mt10">
+                  <img style="width:100%;" src="/Public/images/download_qrcode.png?_v=1.5.30" alt=""
+                       class="download_qrcode">
+                </div>
+              </div>
+            </div>
+          </span>
+            <!-- <a href="/app" style="position: absolute;display: inline-block;width:91px;height: 18px;top: 5px;left: 600px;" title="点击进入app介绍页面"></a>-->
+        </div>
+        <div class="absolute" style="right: 0;">
+            <!-- <span class="item line">
+              <a href="//olddb.yaozh.com">返回旧版</a>
+            </span> -->
+
+            <!-- 语言首页切换_start_登陆之前 -->
+            <div id="change_language" class="ib fl">
+                <ul>
+                    <li>简体中文</li>
+                    <li class="more">English</li>
+                </ul>
+                <div class="open"></div>
+                <script type="text/javascript">
+                  var lang = document.getElementById('change_language');
+                  var langUl = lang.getElementsByTagName('ul')[0];
+                  var langOpen = lang.getElementsByClassName('open')[0];
+                  var langLis = lang.getElementsByTagName('li');
+                  var langMore = lang.getElementsByClassName('more');
+                  lang.onmouseover = function () {
+                    lang.style.boxShadow = '0 3px 6px 1px rgba(191,191,191,0.7)';
+                    langUl.style.background = '#fff';
+                    langOpen.style.borderTopColor = '#2952a3';
+                    langMore[0].style.display = 'block';
+                  };
+                  lang.onmouseout = function () {
+                    lang.style.boxShadow = '';
+                    langUl.style.background = '#f1f1f1';
+                    langOpen.style.borderTopColor = '#666';
+                    langMore[0].style.display = 'none';
+                  };
+                  langMore[0].onclick = function () {
+                    location.href = '//data.yaozh.com';
+                  };
+                </script>
+            </div>
+            <!-- 语言首页切换_end_登陆之前 -->
+
+            <span class="item user" style="padding-left: 0;">
+              <a href="//www.yaozh.com/login">登录</a>
+            </span>
+            <span class="item line">
+              <a href="//www.yaozh.com/register/" target="_blank">注册</a>
+            </span>
+
+
+        </div>
+    </div>
+
+</div>
+<div class="header-bar" data-widget="sticky" data-wrapperclass="header-bar-wrapper">
+    <form class="wrapper" action="/Search">
+        <a href="/" class="logo" title="药智数据"></a>
+        <div class="search-box">
+            <select class="search-type-select ignore-focus" name="typeid" data-widget="dropdownSelect">
+                <option selected="selected" class="item" value="8446" data-fctype="8446"
+                        data-placeholder="请输入中（英/日）文名称或拼音首字母  或  完整受理号/批准文号" data-params='{"w":"8446"}'>药品
+                </option>
+                <option class="item" value="8452" data-fctype="8452" data-placeholder="请输入中药材名称或拼音首字母"
+                        data-params='{"w":"8452"}'>中药材
+                </option>
+                <option class="item" value="8455" data-fctype="8455" data-placeholder="请输入医疗器械名称或拼音首字母  或   完整受理号/批准文号"
+                        data-params='{"w":"8455"}'>医疗器械
+                </option>
+                <option class="item" value="8456" data-fctype="8456" data-placeholder="请输入保健食品名称或拼音首字母  或  完整受理号/批准文"
+                        data-params='{"w":"8456"}'>食品
+                </option>
+                <option class="item" value="8460" data-fctype="8460" data-placeholder="请输入化妆品名称或拼音首字母  或  完整受理号/批准文号"
+                        data-params='{"w":"8460"}'>化妆品
+                </option>
+                <option class="item" value="9" data-fctype="9" data-placeholder="请输入标准名称" data-params='{"w":"9"}'>标准
+                </option>
+                <option class="item" value="-1" data-fctype="-1" data-placeholder="请输入企业名称" data-params='{"w":"-1"}'>
+                    企业
+                </option>
+                <option class="item" value="-2" data-fctype="-2" data-placeholder="请输入中（英）文疾病名称"
+                        data-params='{"w":"-2"}'>疾病
+                </option>
+            </select>
+            <input data-widget="clearInput" class="search ignore-focus" name="content" type="text"
+                   placeholder="请输入名称或拼音首字母">
+            <a href="javascript:;" class="search-btn">搜索</a>
+        </div>
+        <!-- 广告位 onclick='ga("send", "event", "ad_img", "top_right_corner","")' -->
+        <a class="link-vip" href="https://patent.yaozh.com?source=db&amp;name=search_side_banner"
+           onclick='ga("send", "event", "ad_img", "top_right_corner","102")' target="_blank"><img
+                src="/uploads/150295094956364.gif" alt=""></a>
+    </form>
+</div>
+<div class="ui-topnav-wrapper">
+
+    <ul class="ui-topnav other-nav">
+        <li class="item">
+            <a class="name arrow" href="javascript:;" title="">药品研发</a>
+            <ul class="subnav">
+                <li>
+                    <a class="vm" href="/zhuce" title="药品注册与受理">
+                        药品注册与受理数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/report" title="药物报告">
+                        全球药品研发数据库(药物报告) </a>
+                </li>
+                <li>
+                    <a class="vm" href="/zhuangrang" title="">
+                        药品转让信息数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/linchuangshiyan" title="">
+                        中国临床试验数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/clinical" title="">
+                        药物临床试验数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/zhijichufang" title="药物制剂处方-药智数据">
+                        药物制剂处方数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/nce" title="">
+                        药物NCE原始专利 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/whodi" title="WHO药物信息">
+                        WHO药物信息 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/inn" title="">
+                        多语种INN数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/targets" title="">
+                        药物分子靶点数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/yaozhreport" title="">
+                        药智报告数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="https://patent.yaozh.com" target="_blank" title="">
+                        药智专利通 </a>
+                </li>
+            </ul>
+        </li>
+        <li class="item">
+            <a class="name arrow" href="javascript:;" title="">生产检验</a>
+            <ul class="subnav">
+                <li>
+                    <a class="vm" href="/biaozhun" title="">
+                        中国药品标准 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/foreign" title="">
+                        国外药典在线 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/martindale" title="">
+                        马丁代尔大药典 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/ir" title="">
+                        红外光谱图 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/sepu" title="">
+                        色谱图数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/medbagstand" title="">
+                        药包材标准 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/pizhunyaocaibao" title="">
+                        药包材批准/备案数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/quanqiuqiye" title="全球药品生产企业">
+                        全球药品生产企业 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/shengchanqiye" title="">
+                        中国药品生产企业 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/gmp" title="">
+                        GMP认证查询 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/ypzl" title="不合格公告">
+                        药品质量不合格公告 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/bcs" title="">
+                        BCS分类信息查询 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/dissolution" title="">
+                        FDA溶出度方法库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/orangebook" title="中国橙皮书">
+                        中国橙皮书数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/fdaproducts" title="">
+                        美国FDA橙皮书数据库                                                                   <!-- 推荐 -->
+                        <img title="推荐" class="vm" style="margin-top: -14px"
+                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpkZmMxZDU0Ni1iODBjLTYxNDQtYTc2NC01NmFlNTA5YjI5YTkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjlGNzhFQTdBRkI5MTFFNzkwNTVEOEJBNEQ1MDk4QjYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjlGNzhFQTZBRkI5MTFFNzkwNTVEOEJBNEQ1MDk4QjYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU2MmI4MTJkLWU2ZjAtYWU0Ni05MmJkLTNmMmVhMjI4NmU2NyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpkZmMxZDU0Ni1iODBjLTYxNDQtYTc2NC01NmFlNTA5YjI5YTkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5kFPH0AAABEklEQVR42mL8P4dBlIGBYT4QewIxEwP5YD8Qx4EMmAXE3lgNU09j+G89A5XvsQuXgY5AvJgR6MI/QAYzTBRsAFAjUeDZHgbGHW4oQiAD/+PUAHKRiBED49EMBF8xBMMQvAaS5MKbsxCWEePC/6F3IBqAXiMWsOA0DBj4jJe6wIaBDGbgVUJV8PkeA+NqFeIMBBuA7A1kjaBw1CvDahhWA2EuA0UG3HB014HEk/5hjWUMA+EKRGZgdx2BWKYkZ5AWKRhhCvU2ejLBlg5BacKZSg7cC/JyHBBvBeJfFBj0C2pGHMiF2EACtAQCgS9AHAPEG7GqTP5PUhjeB2I/IL5CrFNxxTIwkTHsA2JTUgwDAYAAAwCpuGE9QzXuvwAAAABJRU5ErkJggg==">
+                    </a>
+                </li>
+                <li>
+                    <a class="vm" href="/jporangebook" title="">
+                        日本橙皮书数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/directory" title="">
+                        中国上市药品目录集 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/orangebei" title="">
+                        参比制剂备案数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/rldlist" title="">
+                        仿制药参比制剂目录 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/yzxjd" title="">
+                        一致性评价进度数据库 </a>
+                </li>
+            </ul>
+        </li>
+        <li class="item">
+            <a class="name arrow" href="javascript:;" title="">合理用药</a>
+            <ul class="subnav">
+                <li>
+                    <a class="vm" href="/instruct" title="">
+                        药品说明书                                                 <!-- HOT -->
+                        <img title="热门" class="vm" style="margin-top: -9px"
+                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpkZmMxZDU0Ni1iODBjLTYxNDQtYTc2NC01NmFlNTA5YjI5YTkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUY3Q0RCQjhBRkI5MTFFN0E1MDA5QzRBRjhEQzA0MUYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUY3Q0RCQjdBRkI5MTFFN0E1MDA5QzRBRjhEQzA0MUYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU2MmI4MTJkLWU2ZjAtYWU0Ni05MmJkLTNmMmVhMjI4NmU2NyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpkZmMxZDU0Ni1iODBjLTYxNDQtYTc2NC01NmFlNTA5YjI5YTkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6SY8cBAAABOUlEQVR42mL8ESwkysDAMB+IPYGYiYF8sB+I40AGzAJib3TDWKecRVHNkt7HwOQSh89ARyBeDDLEl4F6wIER6OX/+Fzyb88irC77FSqC1UQMA5G9/DvHGGFR7VqGf8c3gi1Al0MGeCOBbfUbsEEgGgxePSToZxYMASQvI3sLbCjQwH+XDqKIoXsdw4V/ZhaBFf1/+RBFI0icQUwebOH/lw8YmPTsUdTgNBDkOpgXQZpghoHC7k9zMIQNDEtQUPy/fJD4SCEXMOGKYZBLQRiWwJHZIG+DXEiUgeAwAnoF5EUQBocX0DBkNrK3sXl5D5B2ppKP94JcCEojW0GphAKDfkHNiAOlw2dA7IOmIAFaAoHAFyCOAeKN2ExiX/MWf8JGA/eB2A+Ir1AUy6AyAYj3AbEpKYaBAECAAQAp6okwoIJlBAAAAABJRU5ErkJggg==">
+                    </a>
+                </li>
+                <li>
+                    <a class="vm" href="/unlabeleduse" title="">
+                        超说明书用药数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/fdalabel" title="">
+                        美国FDA药品说明书 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/jp_shuomingshu" title="">
+                        日本药品说明书 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/yibao" title="">
+                        医保目录查询                                                 <!-- HOT -->
+                        <img title="热门" class="vm" style="margin-top: -9px"
+                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpkZmMxZDU0Ni1iODBjLTYxNDQtYTc2NC01NmFlNTA5YjI5YTkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUY3Q0RCQjhBRkI5MTFFN0E1MDA5QzRBRjhEQzA0MUYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUY3Q0RCQjdBRkI5MTFFN0E1MDA5QzRBRjhEQzA0MUYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU2MmI4MTJkLWU2ZjAtYWU0Ni05MmJkLTNmMmVhMjI4NmU2NyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpkZmMxZDU0Ni1iODBjLTYxNDQtYTc2NC01NmFlNTA5YjI5YTkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6SY8cBAAABOUlEQVR42mL8ESwkysDAMB+IPYGYiYF8sB+I40AGzAJib3TDWKecRVHNkt7HwOQSh89ARyBeDDLEl4F6wIER6OX/+Fzyb88irC77FSqC1UQMA5G9/DvHGGFR7VqGf8c3gi1Al0MGeCOBbfUbsEEgGgxePSToZxYMASQvI3sLbCjQwH+XDqKIoXsdw4V/ZhaBFf1/+RBFI0icQUwebOH/lw8YmPTsUdTgNBDkOpgXQZpghoHC7k9zMIQNDEtQUPy/fJD4SCEXMOGKYZBLQRiWwJHZIG+DXEiUgeAwAnoF5EUQBocX0DBkNrK3sXl5D5B2ppKP94JcCEojW0GphAKDfkHNiAOlw2dA7IOmIAFaAoHAFyCOAeKN2ExiX/MWf8JGA/eB2A+Ir1AUy6AyAYj3AbEpKYaBAECAAQAp6okwoIJlBAAAAABJRU5ErkJggg==">
+                    </a>
+                </li>
+                <li>
+                    <a class="vm" href="/basicdir" title="">
+                        基本药物目录查询                                                 <!-- HOT -->
+                        <img title="热门" class="vm" style="margin-top: -9px"
+                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpkZmMxZDU0Ni1iODBjLTYxNDQtYTc2NC01NmFlNTA5YjI5YTkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUY3Q0RCQjhBRkI5MTFFN0E1MDA5QzRBRjhEQzA0MUYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUY3Q0RCQjdBRkI5MTFFN0E1MDA5QzRBRjhEQzA0MUYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU2MmI4MTJkLWU2ZjAtYWU0Ni05MmJkLTNmMmVhMjI4NmU2NyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpkZmMxZDU0Ni1iODBjLTYxNDQtYTc2NC01NmFlNTA5YjI5YTkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6SY8cBAAABOUlEQVR42mL8ESwkysDAMB+IPYGYiYF8sB+I40AGzAJib3TDWKecRVHNkt7HwOQSh89ARyBeDDLEl4F6wIER6OX/+Fzyb88irC77FSqC1UQMA5G9/DvHGGFR7VqGf8c3gi1Al0MGeCOBbfUbsEEgGgxePSToZxYMASQvI3sLbCjQwH+XDqKIoXsdw4V/ZhaBFf1/+RBFI0icQUwebOH/lw8YmPTsUdTgNBDkOpgXQZpghoHC7k9zMIQNDEtQUPy/fJD4SCEXMOGKYZBLQRiWwJHZIG+DXEiUgeAwAnoF5EUQBocX0DBkNrK3sXl5D5B2ppKP94JcCEojW0GphAKDfkHNiAOlw2dA7IOmIAFaAoHAFyCOAeKN2ExiX/MWf8JGA/eB2A+Ir1AUy6AyAYj3AbEpKYaBAECAAQAp6okwoIJlBAAAAABJRU5ErkJggg==">
+                    </a>
+                </li>
+                <li>
+                    <a class="vm" href="/goods" title="">
+                        药品商品名查询 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/atc" title="">
+                        药物ATC编码查询系统 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/cpg" title="">
+                        临床诊疗指南数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/icd" title="">
+                        疾病分类与代码(ICD) </a>
+                </li>
+                <li>
+                    <a class="vm" href="/pathway" title="">
+                        临床路径数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/interaction" title="">
+                        药物相互作用数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/clinicaldrug" target="_blank" title="">
+                        临床合理用药数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/xfjml" title="">
+                        兴奋剂禁用目录 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/monitored" title="">
+                        辅助与重点监控用药 </a>
+                </li>
+            </ul>
+        </li>
+        <li class="item">
+            <a class="name arrow" href="javascript:;" title="">市场信息</a>
+            <ul class="subnav">
+                <li>
+                    <a class="vm" href="/ypxs" title="">
+                        药品销售数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/pqf" title="">
+                        生物制品销售数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/xszb" title="">
+                        上市企业销售数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/policies" title="">
+                        政策法规数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/screening" title="上市药品筛选系统">
+                        上市药品筛选系统 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/pijian" title="">
+                        国产药品数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/jinkou" title="">
+                        进口药品数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/fdadrug" title="">
+                        美国FDA药品数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/pmda" title="">
+                        日本PMDA药品数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/epyp" title="">
+                        欧盟药品上市信息 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/hk" title="">
+                        香港上市药品信息 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/dmf" title="">
+                        美国DMF注册数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/USAMarket200" title="美国药品销售数据">
+                        美国药品销售数据TOP200 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/yaopinzhongbiao" title="">
+                        药品中标信息查询 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/pifajiage" title="">
+                        太和药品行情查询 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/dijia" title="">
+                        低价药目录查询 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/yaopinjiage" title="">
+                        药品最高零售价 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/drugad" title="药品广告数据库">
+                        药品广告定位分析 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/hmap" title="">
+                        全国医院数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/customs" title="">
+                        海关进出口数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="https://db.yaozh.com/bigdata/ssyp" title="">
+                        全球上市药品筛选系统 </a>
+                </li>
+            </ul>
+        </li>
+        <li class="item">
+            <a class="name arrow" href="javascript:;" title="">CHEMPHARM</a>
+            <ul class="subnav">
+                <li>
+                    <a class="vm" href="/jiegou" title="">
+                        百万化合物信息库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/biaozhundb" title="">
+                        杂质-对照品数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/yaoyongfuliao" title="">
+                        药用辅料数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/fdafuliao" title="">
+                        FDA批准辅料数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/yfpw" title="">
+                        药辅批文数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/fzk" title="">
+                        药物合成数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/hcff" title="合成方法">
+                        有机合成方法数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/onrc" title="">
+                        有机合成经典反应数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/tichun" title="">
+                        化合物提纯方法数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/unii" title="">
+                        药化词典 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/hgbz" title="">
+                        化工标准数据库 </a>
+                </li>
+            </ul>
+        </li>
+        <li class="item">
+            <a class="name arrow" href="javascript:;" title="">中药材</a>
+            <ul class="subnav">
+                <li>
+                    <a class="vm" href="/yaocai_bz" title="">
+                        药材标准 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/paozhi" title="炮制规范">
+                        中药饮片炮制规范 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/chufang" title="">
+                        中成药处方数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/fangji" title="">
+                        中药方剂数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/zhongyaocai" title="">
+                        中药材基本信息库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/zhongyaopinzhong" title="">
+                        中药保护品种 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/tupu" title="">
+                        中药材图谱 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/yaocai" title="">
+                        药材辞典与现代化研究 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/eherb" title="">
+                        EMA中草药评价报告 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/zhbc" title="">
+                        中华本草数据库 </a>
+                </li>
+            </ul>
+        </li>
+        <li class="item">
+            <a class="name arrow" href="javascript:;" title="">医疗器械</a>
+            <ul class="subnav">
+                <li>
+                    <a class="vm" href="/qxzhuce" title="器械注册审评">
+                        器械注册审评数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/qixiebiaozhun" title="">
+                        医疗器械标准 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/jixie" title="">
+                        国产器械 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/jinkoujixie" title="">
+                        进口器械 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/fdazc" title="">
+                        FDA器械上市前通知/批准 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/fenleimulu" title="">
+                        医疗器械分类目录 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/jixieshengchanqiye" title="">
+                        医疗器械生产企业 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/yyhc" title="">
+                        医用耗材中标数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/qixiead" title="医疗器械广告数据库">
+                        医疗器械广告数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/clinical?interventions=Device" title="">
+                        医疗器械临床试验库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/policies" title="">
+                        医疗器械法规数据库 </a>
+                </li>
+            </ul>
+        </li>
+        <li class="item">
+            <a class="name arrow" href="javascript:;" title="">食品</a>
+            <ul class="subnav">
+                <li>
+                    <a class="vm" href="/bjsp" title="">
+                        保健食品处方数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/baojian" title="">
+                        国产保健食品 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/jinkoubaojian" title="">
+                        进口保健食品 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/spbz" title="食品标准">
+                        食品标准数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/baojianad" title="保健食品广告数据库">
+                        保健食品广告数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/spfd" title="">
+                        食品化学法典 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/fcs" title="">
+                        国际食品法典标准 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/unqulifiedfood" title="">
+                        食品质量不合格公告 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/zhunziblishi" title="">
+                        保健药品历史数据 </a>
+                </li>
+            </ul>
+        </li>
+        <li class="item">
+            <a class="name arrow" href="javascript:;" title="">化妆品</a>
+            <ul class="subnav">
+                <li>
+                    <a class="vm" href="/huazhuang" title="">
+                        国产化妆品 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/jinkouhuazhuang" title="">
+                        进口化妆品 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/huazhuang_yl" title="">
+                        化妆品原料 </a>
+                </li>
+            </ul>
+        </li>
+        <li class="item">
+            <a class="name arrow" href="javascript:;" title="">专题</a>
+            <ul class="subnav">
+                <li>
+                    <a class="vm" href="/zhuanti/2.html" title="">
+                        仿制药一致性评价 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/zhuanti/8.html" title="">
+                        生物药数据库专题 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/zhuanti/zhuanti_20160421" target="_blank" title="">
+                        医疗器械数据库 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/zhuanti/9.html" title="">
+                        标准专题 </a>
+                </li>
+                <li>
+                    <a class="vm" href="/zhuanti/12.html" title="">
+                        兽药专题 </a>
+                </li>
+                <li>
+                    <a class="vm" href="https://star.yaozh.com" title="">
+                        化工数据库 </a>
+                </li>
+            </ul>
+        </li>
+        <li class="padding">
+            <a data-norule="norule" href="/other/vip" title="药智数据VIP入口">VIP</a>
+        </li>
+        <li class="padding">
+            <a href="/search/map" title="数据库导航_网站地图" class="map_i">数据库导航</a>
+        </li>
+        <li class="ui-dropdown pull-right form database-list">
+            <input class="form-control ignore-focus" type="text" data-widget="dbDatabaseMap,dropdown,moveFocus"
+                   data-view="#database-map" data-collection="#database-map a" placeholder="数据库名称(拼音或首字母)">
+            <div class="ui-dropdown-menu ui-dropdown-impede" id="database-map"></div>
+        </li>
+        <li class="padding">
+            <a class="tools" href="/other/tool" title="药学辅助工具" data-widget="linkDialog" data-width="820"
+               data-height="790"><i class="fa fs16"></i></a>
+        </li>
+    </ul>
+</div>
+<script>
+  var oA = document.getElementsByTagName('a');
+  var arr = ['/report', '/nce', '/USAMarket200', '/fzk', '/qxzhuce'];
+  for (var i = 0, len = oA.length; i < len; i++) {
+    var oAi = oA[i].getAttribute('href');
+    for (var j = 0, l = arr.length; j < l; j++) {
+      if (oAi == arr[j]) {
+        var oLi = oA[i].parentNode;
+        var oImg = oA[i].children[0];
+        var text = oA[i].innerText;
+        oLi.innerHTML = '<a class="vm hasrule" href=' + arr[j] + ' title data-norule="norule">' + text + '</a>';
+        if (oImg) oLi.children[0].append(oImg);
+      }
+    }
+  }
+</script>
+<div class="ui-crumb offset-top">
+    <span>当前位置：</span>
+    <a href="/">首页</a>
+    <em>&gt;</em>
+    <span><a class="cl-blue" href="/drugad">药品广告定位分析</a></span>
+    <span class="info">
+    <a class="item with-text" title="建议反馈" data-action="feedback" href="/user/feedback/add" data-widget="linkDialog"
+       data-width="700" data-height="560">
+      <i class="fa"></i>
+      <span>反馈纠错</span>
+    </a>
+        <a class="ml5" target="_blank" href="http://help.yaozh.com/help403.html">
+      <i class="fa"></i>
+      <span>帮助中心</span>
+    </a>
+      </span>
+</div>
+
+<div class="main">
+    <!-- 表单 -->
+    <!-- 广告位-start -->
+    <a href="https://report.yaozh.com/?ga_source=db&amp;ga_name=Column_Advertisement_ad" target="_blank"
+       onclick='ga("send", "event", "ad_img", "Column_Advertisement_ad","196")'><img src="/uploads/154322191984143.png "
+                                                                                     style="width:1200px;height:60px;margin-bottom: 4px;margin-top: -8px;"></a>
+    <!-- 广告位-end -->
+    <div class="ui-tab search-tab hide">
+        <div class="ui-tab-panels">
+            <div class="ui-tab-panel active">
+                <div class="form align-right form-style-2">
+                    <form class="form-double-groups" action="/drugad">
+                        <!--  -->
+
+                        <div class="form-group" data-norule="">
+                            <label class="form-label" title="药品名称">药品名称</label>
+                            <div class="form-box">
+                                <input class="form-control" placeholder="" type='text' name="name" value="藿香"/>
+                                <label class="checkbox"><input type='checkbox' value="1"
+                                                               name='jc_me_name|me_productname'/>精确查询</label></div>
+                        </div>
+                        <div class="form-group" data-norule="">
+                            <label class="form-label" title="广告失效日期">广告失效日期</label>
+                            <div class="form-box">
+                                <input class="form-control half" type='text' name="youxiaoqiendstr"
+                                       data-widget="datepicker" value=""/>
+                                -
+                                <input class="form-control half" type='text' name="youxiaoqiendend"
+                                       data-widget="datepicker" value=""/>
+                            </div>
+                        </div>
+                        <div class="form-group" data-norule="norule">
+                            <label class="form-label" title="全文检索">全文检索</label>
+                            <div class="form-box">
+                                <input class="form-control" placeholder="输入广告内容关键词，药品名、适应症等" type='text' name="context"
+                                       value=""/>
+                            </div>
+                        </div>
+                        <div class="form-group" data-norule="">
+                            <label class="form-label" title="广告生效日期">广告生效日期</label>
+                            <div class="form-box">
+                                <input class="form-control half" type='text' name="youxiaoqibeginstr"
+                                       data-widget="datepicker" value=""/>
+                                -
+                                <input class="form-control half" type='text' name="youxiaoqibeginend"
+                                       data-widget="datepicker" value=""/>
+                            </div>
+                        </div>
+                        <div class="form-group" data-norule="">
+                            <label class="form-label" title="生产企业">生产企业</label>
+                            <div class="form-box">
+                                <input class="form-control" placeholder="" type='text' name="shengchanqiye" value=""/>
+                            </div>
+                        </div>
+                        <div class="form-group" data-norule="">
+                            <label class="form-label" title="处方分类">处方分类</label>
+                            <div class="form-box">
+                                <select class="form-control" data-widget="linkSelect" data-defaults="全部"
+                                        data-names="drugtypess"
+                                        data-list='[{"name":"\u8bf7\u9009\u62e9","sort":0,"val":"\u5168\u90e8"},{"name":"\u975e\u5904\u65b9\u836f","sort":1,"val":"2"},{"name":"\u5904\u65b9\u836f","sort":2,"val":"1"}]'
+                                        data-src="">
+                                </select></div>
+                        </div>
+                        <div class="form-group" data-norule="">
+                            <label class="form-label" title="药品批准文号">药品批准文号</label>
+                            <div class="form-box">
+                                <input class="form-control" placeholder="" type='text' name="pizhunwenhao" value=""/>
+                            </div>
+                        </div>
+                        <div class="form-group" data-norule="norule">
+                            <label class="form-label" title="药理分类">药理分类</label>
+                            <div class="form-box">
+                                <select class="form-control" data-defaults="" data-names="atcb"
+                                        data-widget="dbActCode"></select>
+                            </div>
+                        </div>
+                        <div class="form-group clear">
+                            <label class="form-label"></label>
+                            <div class="form-box">
+                                <button type="submit" class="btn btn-blue form-control-width">搜索</button>
+                                <label class="checkbox"><input type="checkbox" value="1" name="isfilter">二次筛选</label>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-groups">
+                        <div class="ui-box ui-box-yellow p10" style="margin-bottom: 20px;">
+                            <p><span style="color: rgb(0, 112, 192); font-size: 12px;">查询虚假广告：</span><a
+                                    href="http://db.yaozh.com/falsead" target="_blank"><span
+                                    style="color: rgb(0, 112, 192); font-size: 12px;">虚假广告企业名录</span></a></p>
+                            <p style="line-height: normal;"><span style="color: rgb(0, 112, 192); font-size: 12px;">查询医疗器械广告：<a
+                                    href="http://db.yaozh.com/qixiead" target="_blank"><span
+                                    style="color: rgb(0, 112, 192); font-size: 12px;">医疗器械广告数据库</span></a></span></p>
+                            <p><span style="color: rgb(0, 112, 192); font-size: 12px;">查询保健食品广告：</span><a
+                                    href="http://db.yaozh.com/baojianad" target="_blank"><span
+                                    style="color: rgb(0, 112, 192); font-size: 12px;">保健食品广告数据库</span></a></p></div>
+                    </div>
+                    <!-- 广告位-start -->
+                    <!-- 广告位-end -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 筛选 -->
+
+    <div class="ui-filter offset-top">
+        <div class="rows">
+            <div class="row">
+                <label class="key">已选条件：</label>
+                <div class="values">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 操作 -->
+    <div class="list-actions">
+        <a data-norule="norule" data-widget="dbActions" data-method="public.exdata" data-url="/drugad/outdata"
+           class="btn btn-blue btn-sm mr5" href="javascript:;" title="导出数据">导出数据</a>
+    </div>
+    <!-- 提示 -->
+
+    <!-- 数据 -->
+
+    <!-- 表格 -->
+    <div class="offset-top table-list" data-max="1000">
+        <table class="table table-striped" data-widget="responsivetable" data-offset="73">
+            <thead>
+            <tr>
+                <th data-priority="1" width="">
+                    <a href="/index.php/Database/index?dbname=drugad&drugtypess=%E5%85%A8%E9%83%A8&name=%E8%97%BF%E9%A6%99&p=1&pageSize=30&list_order=me_name">药品名称
+                        <i class="fa cl-blue"></i>
+                    </a>
+                </th>
+                <th data-priority="1" width="">
+                    <a href="/index.php/Database/index?dbname=drugad&drugtypess=%E5%85%A8%E9%83%A8&name=%E8%97%BF%E9%A6%99&p=1&pageSize=30&list_order=me_shengchanqiye">生产企业
+                        <i class="fa cl-blue"></i>
+                    </a>
+                </th>
+                <th data-priority="1" width="">
+                    广告批准文号
+                </th>
+                <th data-priority="1" width="">
+                    处方分类
+                </th>
+                <th data-priority="1" width="">
+                    药品批准文号
+                </th>
+                <th data-priority="1" width="">
+                    省市
+                </th>
+                <th data-priority="1" width="">
+                    <a href="/index.php/Database/index?dbname=drugad&drugtypess=%E5%85%A8%E9%83%A8&name=%E8%97%BF%E9%A6%99&p=1&pageSize=30&list_order=me_youxiaoqibegin">广告生效日期
+                        <i class="fa cl-blue"></i>
+                    </a>
+                </th>
+                <th data-priority="1" width="">
+                    <a href="/index.php/Database/index?dbname=drugad&drugtypess=%E5%85%A8%E9%83%A8&name=%E8%97%BF%E9%A6%99&p=1&pageSize=30&list_order=me_youxiaoqiend">广告失效日期
+                        <i class="fa cl-blue"></i>
+                    </a>
+                </th>
+                <th data-priority="1" width="">
+                    详细
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <th>藿香正气水</th>
+                <td>漳州片仔癀药业股份有限公司</td>
+                <td>闽药广审(文)第2011010001号</td>
+                <td>非处方药</td>
+                <td>国药准字Z35020233</td>
+                <td>福建</td>
+                <td>2011-01-05</td>
+                <td>2012-01-04</td>
+                <td><a class="cl-blue" href="/drugad/133.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气胶囊</th>
+                <td>漳州片仔癀药业股份有限公司</td>
+                <td>闽药广审(文)第2011010002号</td>
+                <td>非处方药</td>
+                <td>国药准字Z20053983</td>
+                <td>福建</td>
+                <td>2011-01-05</td>
+                <td>2012-01-04</td>
+                <td><a class="cl-blue" href="/drugad/134.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气滴丸</th>
+                <td>天津天士力制药股份有限公司</td>
+                <td>津药广审(文)第2011010011号</td>
+                <td>非处方药</td>
+                <td>国药准字Z20000048</td>
+                <td>天津</td>
+                <td>2011-01-12</td>
+                <td>2012-01-11</td>
+                <td><a class="cl-blue" href="/drugad/653.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气滴丸</th>
+                <td>天津天士力制药股份有限公司</td>
+                <td>津药广审(视)第2011010001号</td>
+                <td>非处方药</td>
+                <td>国药准字Z20000048</td>
+                <td>天津</td>
+                <td>2011-01-12</td>
+                <td>2012-01-11</td>
+                <td><a class="cl-blue" href="/drugad/656.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(视)第2011010004号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-01-25</td>
+                <td>2012-01-24</td>
+                <td><a class="cl-blue" href="/drugad/975.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(视)第2011010005号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-01-25</td>
+                <td>2012-01-24</td>
+                <td><a class="cl-blue" href="/drugad/976.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气滴丸</th>
+                <td>天津天士力制药股份有限公司</td>
+                <td>津药广审(文)第2010120260号</td>
+                <td>非处方药</td>
+                <td>国药准字Z20000048</td>
+                <td>天津</td>
+                <td>2010-12-13</td>
+                <td>2011-12-12</td>
+                <td><a class="cl-blue" href="/drugad/1038.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气合剂</th>
+                <td>江西地威药业有限公司</td>
+                <td>赣药广审(文)第2011010001号</td>
+                <td>非处方药</td>
+                <td>国药准字Z36020544</td>
+                <td>江西</td>
+                <td>2011-01-04</td>
+                <td>2012-01-03</td>
+                <td><a class="cl-blue" href="/drugad/1492.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气滴丸</th>
+                <td>天津天士力制药股份有限公司</td>
+                <td>津药广审(视)第2011030014号</td>
+                <td>非处方药</td>
+                <td>国药准字Z20000048</td>
+                <td>天津</td>
+                <td>2011-03-16</td>
+                <td>2012-03-15</td>
+                <td><a class="cl-blue" href="/drugad/1973.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气水</th>
+                <td>云南省腾冲制药厂</td>
+                <td>滇药广审(文)第2011030055号</td>
+                <td>非处方药</td>
+                <td>国药准字Z53020639</td>
+                <td>云南</td>
+                <td>2011-03-22</td>
+                <td>2012-03-21</td>
+                <td><a class="cl-blue" href="/drugad/2238.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(视)第2011030010号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-03-21</td>
+                <td>2012-03-20</td>
+                <td><a class="cl-blue" href="/drugad/2378.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(视)第2011030011号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-03-21</td>
+                <td>2012-03-20</td>
+                <td><a class="cl-blue" href="/drugad/2379.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(视)第2011030012号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-03-21</td>
+                <td>2012-03-20</td>
+                <td><a class="cl-blue" href="/drugad/2380.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>加味藿香正气丸</th>
+                <td>北京同仁堂科技发展股份有限公司制药厂</td>
+                <td>京药广审(文)第2011040273号</td>
+                <td>非处方药</td>
+                <td>国药准字Z1102097</td>
+                <td>北京</td>
+                <td>2011-04-12</td>
+                <td>2012-04-11</td>
+                <td><a class="cl-blue" href="/drugad/2878.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(文)第2011050034号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-05-11</td>
+                <td>2012-05-10</td>
+                <td><a class="cl-blue" href="/drugad/2977.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气滴丸</th>
+                <td>天津天士力制药股份有限公司</td>
+                <td>津药广审(声)第2011040003号</td>
+                <td>非处方药</td>
+                <td>国药准字Z20000048</td>
+                <td>天津</td>
+                <td>2011-04-21</td>
+                <td>2012-04-20</td>
+                <td><a class="cl-blue" href="/drugad/3127.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气滴丸</th>
+                <td>天津天士力制药股份有限公司</td>
+                <td>津药广审(声)第2011040004号</td>
+                <td>非处方药</td>
+                <td>国药准字Z20000048</td>
+                <td>天津</td>
+                <td>2011-04-21</td>
+                <td>2012-04-20</td>
+                <td><a class="cl-blue" href="/drugad/3128.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(文)第2011040028号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-04-20</td>
+                <td>2012-04-19</td>
+                <td><a class="cl-blue" href="/drugad/3132.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(文)第2011040029号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-04-20</td>
+                <td>2012-04-19</td>
+                <td><a class="cl-blue" href="/drugad/3133.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(视)第2011040018号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-04-26</td>
+                <td>2012-04-25</td>
+                <td><a class="cl-blue" href="/drugad/3347.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(视)第2011040019号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-04-26</td>
+                <td>2012-04-25</td>
+                <td><a class="cl-blue" href="/drugad/3348.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气水</th>
+                <td>北京同仁堂科技发展股份有限公司制药厂</td>
+                <td>京药广审(声)第2011040017号</td>
+                <td>非处方药</td>
+                <td>国药准字Z11020377</td>
+                <td>北京</td>
+                <td>2011-04-25</td>
+                <td>2012-04-24</td>
+                <td><a class="cl-blue" href="/drugad/3446.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气滴丸</th>
+                <td>天津天士力制药股份有限公司</td>
+                <td>津药广审(文)第2011050092号</td>
+                <td>非处方药</td>
+                <td>国药准字Z20000048</td>
+                <td>天津</td>
+                <td>2011-05-09</td>
+                <td>2012-05-08</td>
+                <td><a class="cl-blue" href="/drugad/3584.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(文)第2011050035号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-05-11</td>
+                <td>2012-05-10</td>
+                <td><a class="cl-blue" href="/drugad/3746.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(文)第2011050036号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-05-11</td>
+                <td>2012-05-10</td>
+                <td><a class="cl-blue" href="/drugad/3747.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(文)第2011050038号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-05-11</td>
+                <td>2012-05-10</td>
+                <td><a class="cl-blue" href="/drugad/3749.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(视)第2011050020号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-05-11</td>
+                <td>2012-05-10</td>
+                <td><a class="cl-blue" href="/drugad/3750.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(视)第2011050021号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-05-11</td>
+                <td>2012-05-10</td>
+                <td><a class="cl-blue" href="/drugad/3751.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气口服液</th>
+                <td>太极集团重庆涪陵制药厂有限公司</td>
+                <td>渝药广审(视)第2011050022号</td>
+                <td>非处方药</td>
+                <td>国药准字Z50020409</td>
+                <td>重庆</td>
+                <td>2011-05-11</td>
+                <td>2012-05-10</td>
+                <td><a class="cl-blue" href="/drugad/3752.html" target="_blank">查看</a></td>
+            </tr>
+            <tr>
+                <th>藿香正气水</th>
+                <td>云南白药集团股份有限公司</td>
+                <td>滇药广审(文)第2011050114号</td>
+                <td>非处方药</td>
+                <td>国药准字Z20044103</td>
+                <td>云南</td>
+                <td>2011-05-17</td>
+                <td>2012-05-16</td>
+                <td><a class="cl-blue" href="/drugad/3758.html" target="_blank">查看</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 分页 -->
+    <div class="tr offset-top" data-widget="dbPagination" data-page="1" data-total="815" data-size="30"
+         data-href="/drugad?drugtypess=%E5%85%A8%E9%83%A8&name=%E8%97%BF%E9%A6%99&p=<%=page%>&pageSize=30"
+         data-max-page="10"></div>
+
+</div>
+<footer id="footer">
+    <div class="wrapper">
+        <div class="clearfix">
+            <div class="fl">
+                <a target=&quot;_blank&quot; href="https://db.yaozh.com/vip">VIP试用</a><a target=&quot;_blank&quot;
+                                                                                         href="http://db.yaozh.com/app">APP下载</a><a
+                    target=&quot;_blank&quot; href="https://db.yaozh.com/other/custom?source=db&amp;position=bottom_">客服中心</a><a
+                    target=&quot;_blank&quot; href="https://db.yaozh.com/other/links">友情链接</a><a
+                    target=&quot;_blank&quot; href="https://db.yaozh.com/other/faq">常见问题</a><a
+                    href="http://db.yaozh.com/Zhuanti/zhuanti_20160721">数据可视化</a><a target=&quot;_blank&quot;
+                                                                                    href="https://db.yaozh.com/bigdata?source=db&amp;name=index_foot">大数据可视化分析平台</a><a
+                    target=&quot;_blank&quot; href="https://db.yaozh.com/other/sitemap">网站地图</a><a
+                    target=&quot;_blank&quot; href="http://www.yaozh.com/ued?source=db&amp;name=footer">用户体验提升计划</a>
+            </div>
+            <div class="fr">
+                <i class="fa"></i>
+                <b class="fs16 mr20">400-678-0778</b>
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=50010802001068"
+                   style="display:inline-block;text-decoration:none;height:17px;line-height:17px;"><img
+                        src="/Public/home/image/netsafe.png" style="float:left;"/>
+                    <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px;">渝公网安备
+                        50010802001068号</p>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="fl mh">
+            </div>
+            <div class="fr">康洲大数据 Copyright © 2009-2018 药智网YAOZH.COM All Rights Reserved.</div>
+        </div>
+    </div>
+    <div data-widget="dbAdDownload"></div>
+    <script> var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement('script');
+      hm.src = '//hm.baidu.com/hm.js?65968db3ac154c3089d7f9a4cbb98c94';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(hm, s);
+    })(); </script>
+    <script type='text/javascript'>
+      (function (m, ei, q, i, a, j, s) {
+        m[i] = m[i] || function () {
+          (m[i].a = m[i].a || []).push(arguments);
+        };
+        j = ei.createElement(q),
+          s = ei.getElementsByTagName(q)[0];
+        j.async = true;
+        j.charset = 'UTF-8';
+        j.src = '//static.meiqia.com/dist/meiqia.js';
+        s.parentNode.insertBefore(j, s);
+      })(window, document, 'script', '_MEIQIA');
+      _MEIQIA('entId', 10555);
+      _MEIQIA('withoutBtn');
+      _MEIQIA('fallback', 1);
+      _MEIQIA('assign', {
+        groupToken: '2a9b1e9c88bf5fc202a5bc1ae6cd22ef',
+      });
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments);
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(window, document, 'script', '//yznews.oss-cn-hangzhou.aliyuncs.com/system_1/analytics.js', 'ga');
+      ga('create', 'UA-73321472-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script type="text/javascript">
+      /*解决内容少导致底部上浮问题，其中16px为main的margin-bottom;*/
+      var height = document.body.clientHeight - window.innerHeight;
+      if (height < 0) {
+        var footer = document.getElementById('footer');
+        getStyle(footer, 'marginTop');
+
+        function getStyle(obj, attr) {
+          var stylemt = obj.style.marginTop;
+          if (stylemt) {
+            obj.style.marginTop = -height + parseInt(stylemt) + 16 + 'px';
+          } else {
+            var marTop = document.defaultView.getComputedStyle(obj, null)[attr];
+            marTop = parseInt(marTop);
+            if (marTop) {
+              footer.style.marginTop = -height + marTop + 16 + 'px';
+            } else {
+              footer.style.marginTop = -height + 16 + 'px';
+            }
+
+          }
+        }
+      }
+    </script>
+</footer>
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+<!-- 左边悬浮广告 -->
+<div style="position: fixed;left: 10px;top: 50%;margin-top: -87px;display: none;" id="floatAdver">
+    <div style="width: 20px;height: 70px;background: url(/Public/images/adver_close.png);margin: 0 auto;">
+        <div style="width: 20px;height: 20px;cursor: pointer;" onclick="$('#floatAdver').hide()"></div>
+    </div>
+    <a target="_blank" href="https://report.yaozh.com/aboutUs.html?ga_source=db&amp;ga_name=detail_list_left_ad"
+       onclick='ga("send", "event", "ad_img", "detail_list_left_ad ","169")'><img src="/uploads/154638974794197.jpg"
+                                                                                  style="width: 160px;"></a>
+    <script type="text/javascript">
+      window.onload = function () {
+        // 只在列表页&详情页显示广告
+        if (!$('.ui-crumb')[0]) {
+          return;
+        }
+        var _winWidth;
+        var _conWidth;
+        setLeft();
+        $(window).resize(function () {
+          setLeft();
+
+        });
+
+        function setLeft() {
+          _winWidth = $(window).width();
+          _conWidth = $('.ui-topnav-wrapper').width();
+          if (_winWidth > _conWidth) {
+            $('#floatAdver').css('left', ((_winWidth - _conWidth) / 2 - 160) / 2).show();
+          }
+          if (_winWidth < 1526) {
+            $('#floatAdver').hide();
+          }
+        }
+      };
+    </script>
+</div>
+</body>
+</html>
