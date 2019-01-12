@@ -28,7 +28,7 @@ const CONSTANT = {
   FILENAME: filename,
 };
 
-console.log(process.argv.slice(2).join(' '));
+console.log('CONSTANT: ', CONSTANT);
 
 if (!CONSTANT.NAME) {
   console.log('no name specified, process exit with code 2');
@@ -51,7 +51,7 @@ const instance = axios.create({
 const url = 'https://db.yaozh.com/drugad';
 
 async function getPageData(p) {
-  const { data } = await instance({
+  const data = await instance({
     method: 'get',
     url,
     params: {
@@ -61,7 +61,8 @@ async function getPageData(p) {
       pageSize: CONSTANT.PAGE_SIZE,
     },
   });
-  return data;
+  console.log('fetch main page data success, url: ', data.request.res.responseUrl);
+  return data.data;
 }
 
 async function getHrefs(data) {
@@ -94,6 +95,7 @@ async function sleep(ms) {
 
 async function getSingleData(url) {
   const { data } = await instance.get(url);
+  console.log('\tfetch ad page data success, url: ', url);
   return data;
 }
 
@@ -102,6 +104,7 @@ function getSingleAd(data) {
   const $table = $('.body.detail-main table.table');
   const $spans = $table.find('tr > td > span');
   const href = $spans.last().find('a').attr('href');
+  console.log('\t\tget ad href success, href: ', href);
   return href;
 }
 
@@ -117,14 +120,17 @@ function appendToFile(filename, data) {
     _.forEach(rows, row => appendToFile(CONSTANT.FILENAME, `${row}\n`));
     console.log(`target page ${i} success! wait 2s and start next one...`);
     await sleep(1000);
-    if (CONSTANT.END_PAGE && CONSTANT.START_PAGE >= CONSTANT.END_PAGE) {
+    if (CONSTANT.END_PAGE && (i >= CONSTANT.END_PAGE)) {
       break;
     }
   }
 })()
-  .then()
+  .then(() => {
+    console.log('tasks all done, process exit...');
+    process.exit(0);
+  })
   .catch(e => {
-    fs.appendFileSync('error.log', JSON.stringify(e));
+    fs.appendFileSync('error.log', `${JSON.stringify(e)}\n`);
     console.log('something went wrong, process exit with code 3');
     process.exit(3);
   });
